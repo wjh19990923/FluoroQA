@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">FluoroQA retrospective classification results</title>
+<desc id="desc">Accuracy and pooled AUROC for three models, Raw and Local, on Test and one held-out specimen. Axes start at zero; no uncertainty intervals shown. Exact values and caveats accompany this figure.</desc>
+<rect width="1200" height="720" rx="20" fill="#f5f8fb"/><g font-family="Arial,Helvetica,sans-serif" fill="#193347">
+<text x="40" y="48" font-size="30" font-weight="700">Does the score separate acceptable and failed poses?</text>
+<text x="40" y="80" font-size="19" >256 pixels · success &lt;2 mm · retrospective results · full-scale axes</text>
+<rect x="890" y="101" width="18" height="18" fill="#6e9fbd"/>
+<text x="915" y="117" font-size="16" >Raw</text>
+<rect x="1020" y="101" width="18" height="18" fill="#107f84"/>
+<text x="1045" y="117" font-size="16" >Local</text>
+<text x="40" y="150" font-size="21" font-weight="700">Test / Accuracy (%)</text>
+<path d="M166.0 165V322" stroke="#dbe5eb"/>
+<text x="166.0" y="344" font-size="13" text-anchor="middle">0</text>
+<path d="M256.0 165V322" stroke="#dbe5eb"/>
+<text x="256.0" y="344" font-size="13" text-anchor="middle">25</text>
+<path d="M346.0 165V322" stroke="#dbe5eb"/>
+<text x="346.0" y="344" font-size="13" text-anchor="middle">50</text>
+<path d="M436.0 165V322" stroke="#dbe5eb"/>
+<text x="436.0" y="344" font-size="13" text-anchor="middle">75</text>
+<path d="M526.0 165V322" stroke="#dbe5eb"/>
+<text x="526.0" y="344" font-size="13" text-anchor="middle">100</text>
+<text x="40" y="198" font-size="15" >FluoroQA-zero</text>
+<rect x="166" y="181" width="258.5769" height="15" rx="2" fill="#6e9fbd"/>
+<text x="429.5769230769231" y="194" font-size="13" >71.83</text>
+<rect x="166" y="201" width="315.3462" height="15" rx="2" fill="#107f84"/>
+<text x="486.34615384615387" y="214" font-size="13" >87.60</text>
+<text x="40" y="251" font-size="15" >FluoroQA-mTRE</text>
+<rect x="166" y="234" width="265.8462" height="15" rx="2" fill="#6e9fbd"/>
+<text x="436.84615384615387" y="247" font-size="13" >73.85</text>
+<rect x="166" y="254" width="319.8462" height="15" rx="2" fill="#107f84"/>
+<text x="490.8461538461538" y="267" font-size="13" >88.85</text>
+<text x="40" y="304" font-size="15" >FluoroQA-BCE</text>
+<rect x="166" y="287" width="307.0385" height="15" rx="2" fill="#6e9fbd"/>
+<text x="478.03846153846155" y="300" font-size="13" >85.29</text>
+<rect x="166" y="307" width="320.5385" height="15" rx="2" fill="#107f84"/>
+<text x="491.53846153846155" y="320" font-size="13" >89.04</text>
+<text x="40" y="394" font-size="21" font-weight="700">Test / Pooled AUROC</text>
+<path d="M166.0 409V566" stroke="#dbe5eb"/>
+<text x="166.0" y="588" font-size="13" text-anchor="middle">0.00</text>
+<path d="M256.0 409V566" stroke="#dbe5eb"/>
+<text x="256.0" y="588" font-size="13" text-anchor="middle">0.25</text>
+<path d="M346.0 409V566" stroke="#dbe5eb"/>
+<text x="346.0" y="588" font-size="13" text-anchor="middle">0.50</text>
+<path d="M436.0 409V566" stroke="#dbe5eb"/>
+<text x="436.0" y="588" font-size="13" text-anchor="middle">0.75</text>
+<path d="M526.0 409V566" stroke="#dbe5eb"/>
+<text x="526.0" y="588" font-size="13" text-anchor="middle">1.00</text>
+<text x="40" y="442" font-size="15" >FluoroQA-zero</text>
+<rect x="166" y="425" width="267.9184" height="15" rx="2" fill="#6e9fbd"/>
+<text x="438.91836168639054" y="438" font-size="13" >0.744</text>
+<rect x="166" y="445" width="338.3307" height="15" rx="2" fill="#107f84"/>
+<text x="509.3307137573965" y="458" font-size="13" >0.940</text>
+<text x="40" y="495" font-size="15" >FluoroQA-mTRE</text>
+<rect x="166" y="478" width="270.8390" height="15" rx="2" fill="#6e9fbd"/>
+<text x="441.83903476331363" y="491" font-size="13" >0.752</text>
+<rect x="166" y="498" width="339.6177" height="15" rx="2" fill="#107f84"/>
+<text x="510.61769600591714" y="511" font-size="13" >0.943</text>
+<text x="40" y="548" font-size="15" >FluoroQA-BCE</text>
+<rect x="166" y="531" width="316.8972" height="15" rx="2" fill="#6e9fbd"/>
+<text x="487.8971893491124" y="544" font-size="13" >0.880</text>
+<rect x="166" y="551" width="340.3694" height="15" rx="2" fill="#107f84"/>
+<text x="511.3693602071006" y="564" font-size="13" >0.945</text>
+<text x="630" y="150" font-size="21" font-weight="700">Held-out / Accuracy (%)</text>
+<path d="M756.0 165V322" stroke="#dbe5eb"/>
+<text x="756.0" y="344" font-size="13" text-anchor="middle">0</text>
+<path d="M846.0 165V322" stroke="#dbe5eb"/>
+<text x="846.0" y="344" font-size="13" text-anchor="middle">25</text>
+<path d="M936.0 165V322" stroke="#dbe5eb"/>
+<text x="936.0" y="344" font-size="13" text-anchor="middle">50</text>
+<path d="M1026.0 165V322" stroke="#dbe5eb"/>
+<text x="1026.0" y="344" font-size="13" text-anchor="middle">75</text>
+<path d="M1116.0 165V322" stroke="#dbe5eb"/>
+<text x="1116.0" y="344" font-size="13" text-anchor="middle">100</text>
+<text x="630" y="198" font-size="15" >FluoroQA-zero</text>
+<rect x="756" y="181" width="278.8269" height="15" rx="2" fill="#6e9fbd"/>
+<text x="1039.826923076923" y="194" font-size="13" >77.45</text>
+<rect x="756" y="201" width="321.7500" height="15" rx="2" fill="#107f84"/>
+<text x="1082.75" y="214" font-size="13" >89.38</text>
+<text x="630" y="251" font-size="15" >FluoroQA-mTRE</text>
+<rect x="756" y="234" width="288.6923" height="15" rx="2" fill="#6e9fbd"/>
+<text x="1049.6923076923076" y="247" font-size="13" >80.19</text>
+<rect x="756" y="254" width="321.7500" height="15" rx="2" fill="#107f84"/>
+<text x="1082.75" y="267" font-size="13" >89.38</text>
+<text x="630" y="304" font-size="15" >FluoroQA-BCE</text>
+<rect x="756" y="287" width="311.7115" height="15" rx="2" fill="#6e9fbd"/>
+<text x="1072.7115384615386" y="300" font-size="13" >86.59</text>
+<rect x="756" y="307" width="323.1346" height="15" rx="2" fill="#107f84"/>
+<text x="1084.1346153846155" y="320" font-size="13" >89.76</text>
+<text x="630" y="394" font-size="21" font-weight="700">Held-out / Pooled AUROC</text>
+<path d="M756.0 409V566" stroke="#dbe5eb"/>
+<text x="756.0" y="588" font-size="13" text-anchor="middle">0.00</text>
+<path d="M846.0 409V566" stroke="#dbe5eb"/>
+<text x="846.0" y="588" font-size="13" text-anchor="middle">0.25</text>
+<path d="M936.0 409V566" stroke="#dbe5eb"/>
+<text x="936.0" y="588" font-size="13" text-anchor="middle">0.50</text>
+<path d="M1026.0 409V566" stroke="#dbe5eb"/>
+<text x="1026.0" y="588" font-size="13" text-anchor="middle">0.75</text>
+<path d="M1116.0 409V566" stroke="#dbe5eb"/>
+<text x="1116.0" y="588" font-size="13" text-anchor="middle">1.00</text>
+<text x="630" y="442" font-size="15" >FluoroQA-zero</text>
+<rect x="756" y="425" width="300.3533" height="15" rx="2" fill="#6e9fbd"/>
+<text x="1061.3532960428993" y="438" font-size="13" >0.834</text>
+<rect x="756" y="445" width="343.0303" height="15" rx="2" fill="#107f84"/>
+<text x="1104.0303485576924" y="458" font-size="13" >0.953</text>
+<text x="630" y="495" font-size="15" >FluoroQA-mTRE</text>
+<rect x="756" y="478" width="304.6372" height="15" rx="2" fill="#6e9fbd"/>
+<text x="1065.6372272559172" y="491" font-size="13" >0.846</text>
+<rect x="756" y="498" width="343.4155" height="15" rx="2" fill="#107f84"/>
+<text x="1104.4155417899408" y="511" font-size="13" >0.954</text>
+<text x="630" y="548" font-size="15" >FluoroQA-BCE</text>
+<rect x="756" y="531" width="330.9694" height="15" rx="2" fill="#6e9fbd"/>
+<text x="1091.9693971893491" y="544" font-size="13" >0.919</text>
+<rect x="756" y="551" width="343.3181" height="15" rx="2" fill="#107f84"/>
+<text x="1104.318116678994" y="564" font-size="13" >0.954</text>
+<text x="40" y="645" font-size="16" >Test: 52 images / 1,040 candidates. Held-out: 1 specimen / 104 images / 2,080 candidates.</text>
+<text x="40" y="671" font-size="16" >Raw thresholds: train. Local thresholds: val. zero/mTRE: best through 200; BCE: last 350.</text>
+<text x="40" y="697" font-size="15" >Different checkpoints and calibration splits; not an isolated BCE ablation or a claim of clinical generalization.</text>
+</g></svg>

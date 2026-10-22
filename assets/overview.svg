@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<title id="title">FluoroQA: is this registration acceptable?</title>
+<desc id="desc">Schematic image-pair quality assessment. A fixed fluoroscopy image and a DRR at the current pose enter shared VGG features and a learned perceptual score. A locked threshold accepts or flags the pose. Training uses known reference poses; deployment scoring does not.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#526a79"/></marker>
+<g id="shape"><path d="M28 15 Q2 25 10 65 Q16 92 38 75 L50 52 L62 75 Q84 92 90 65 Q98 25 72 15 L64 36 L36 36Z" fill="none" stroke="currentColor" stroke-width="4"/><ellipse cx="50" cy="65" rx="12" ry="18" fill="none" stroke="currentColor" stroke-width="3"/></g></defs>
+<rect width="1200" height="620" rx="20" fill="#f5f8fb"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#193347">
+<text x="42" y="55" font-size="18" letter-spacing="3" fill="#107f84">FLUOROQA / REGISTRATION QUALITY ASSESSMENT</text>
+<text x="42" y="105" font-size="36" font-weight="700">Is this pose acceptable?</text>
+<text x="42" y="139" font-size="20" fill="#526a79">Compare the image pair. Score the alignment. Flag a possible failure.</text>
+<rect x="42" y="183" width="235" height="275" rx="14" fill="white" stroke="#cbd9e2"/>
+<rect x="62" y="203" width="91" height="103" rx="8" fill="#243b4d"/>
+<g transform="translate(63 208) scale(.88)" color="#d1dce3"><use href="#shape"/></g>
+<text x="170" y="241" font-size="16" font-weight="700">Fixed</text><text x="170" y="264" font-size="15">fluoroscopy</text>
+<rect x="62" y="327" width="91" height="103" rx="8" fill="#243b4d"/>
+<g transform="translate(63 332) scale(.88)" color="#f5b563"><use href="#shape"/></g>
+<text x="170" y="364" font-size="16" font-weight="700">Current DRR</text><text x="170" y="387" font-size="15">candidate pose</text>
+<path d="M282 320H322" stroke="#526a79" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="333" y="220" width="245" height="200" rx="14" fill="#e5f0f6" stroke="#b4cbd9"/>
+<text x="455" y="260" text-anchor="middle" font-size="21" font-weight="700">Shared VGG features</text>
+<g fill="#96b8ce" stroke="#5e8fab"><rect x="369" y="289" width="30" height="65"/><rect x="405" y="299" width="28" height="55"/><rect x="439" y="308" width="26" height="46"/><rect x="471" y="316" width="24" height="38"/><rect x="501" y="324" width="22" height="30"/></g>
+<text x="455" y="389" text-anchor="middle" font-size="17">LPIPS feature differences</text>
+<path d="M583 320H623" stroke="#526a79" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="634" y="220" width="240" height="200" rx="14" fill="#dff2ef" stroke="#9acac4"/>
+<text x="754" y="262" text-anchor="middle" font-size="21" font-weight="700">Learned metric</text>
+<text x="754" y="320" text-anchor="middle" font-size="32" font-weight="700" fill="#107f84">d(I, DRR)</text>
+<text x="754" y="361" text-anchor="middle" font-size="17">Raw or current-pose</text><text x="754" y="386" text-anchor="middle" font-size="17">Local calibration</text>
+<path d="M879 320H919" stroke="#526a79" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="930" y="220" width="227" height="200" rx="14" fill="white" stroke="#cbd9e2"/>
+<text x="1043" y="259" text-anchor="middle" font-size="21" font-weight="700">Locked threshold</text>
+<rect x="949" y="284" width="189" height="44" rx="8" fill="#e1f3e9"/><text x="1043" y="313" text-anchor="middle" fill="#18794e" font-size="19">Accept</text>
+<rect x="949" y="342" width="189" height="44" rx="8" fill="#fff0de"/><text x="1043" y="371" text-anchor="middle" fill="#a95312" font-size="19">Flag misalignment</text>
+<rect x="42" y="485" width="1115" height="88" rx="12" fill="#193347"/>
+<text x="64" y="519" fill="white" font-size="19">Training: reference + perturbed poses → triplet loss + optional mTRE margin / BCE</text>
+<text x="64" y="550" fill="#c9dce7" font-size="18">Inference: no GT pose input. This assesses a supplied pose; it does not optimize the pose.</text>
+<text x="42" y="604" font-size="14" fill="#526a79">Illustration only • stylized shapes, not patient images • no score guarantees anatomical correctness</text>
+</g></svg>

@@ -2,6 +2,11 @@
 
 **Learned perceptual metrics for fluoroscopic 2D/3D registration quality assessment.**
 
+[**Try the interactive 2D–3D Projection Lab →**](https://jinhaolab.com/tools/2d3dreg/)
+ · [How it works](#method) · [Results at a glance](#results-at-a-glance) · [Install](#install-and-offline-test)
+
+![FluoroQA overview: compare fluoroscopy and a current-pose DRR, learn a perceptual score, and flag misalignment.](assets/overview.svg)
+
 FluoroQA compares a fluoroscopic image with a rendered image at a candidate pose.
 It adapts the VGG-based [LPIPS metric](https://github.com/richzhang/PerceptualSimilarity)
 using pose-supervised triplet learning, an optional mTRE-dependent margin, and an
@@ -15,18 +20,25 @@ It does **not** include medical data, trained FluoroQA weights, a DRR renderer,
 the private data adapter, or a turnkey reproduction of the paper's experiments.
 No clinical use or diagnostic performance is certified.
 
+## Explore registration in your browser
+
+The companion [**2D–3D Projection Lab**](https://jinhaolab.com/tools/2d3dreg/)
+lets you explore how pose changes affect a CT-derived DRR and its overlay on a
+fluoroscopic image. Open an example, drag to translate, right-drag to rotate,
+and use the wheel to adjust depth. Switch between DRR, background and overlay;
+reset the pose to compare again. The site also exposes camera and display controls.
+
+This is a **manual projection/registration playground**, not an online FluoroQA
+classifier or an automatic registration service. Its display preprocessing is
+not the benchmark preprocessing contract. The site documents example data and
+its CC BY-NC 4.0 terms separately. We link to it rather than copying its medical
+images into this MIT-licensed code repository. No dataset upload is needed to
+try the supplied examples.
+
 ## Method
 
-```mermaid
-flowchart LR
-    F[Fluoroscopic image] --> P[Explicit preprocessing]
-    R[DRR at current pose] --> P
-    P --> V[Shared VGG LPIPS features]
-    V --> W[Learned channel weights]
-    W --> D[Perceptual distance]
-    D --> T[Locked threshold]
-    T --> Q[Align / misalign decision]
-```
+The overview above separates the input pair, feature comparison and final
+decision. Its shapes are schematic, not patient images or a measured alignment.
 
 Larger distance means greater dissimilarity. The training objective is
 `mean(relu(d_positive - d_negative + margin))`, with either zero margin or
@@ -48,6 +60,41 @@ The BCE recipe starts from the mTRE **last epoch-200** checkpoint, not its best
 validation checkpoint. Its fixed constants are the historical **256-pixel**
 training-only probe values. Do not assume they transfer to a new model, dataset
 or resolution. See [protocol details](docs/protocol.md).
+
+### Why use current-pose neighbors?
+
+![Local calibration: twelve neighboring poses around the current candidate, not GT; subtract their mean score.](assets/local-calibration.svg)
+
+Local calibration asks whether a candidate scores better than nearby alternatives
+for the **same image**. It does not need a GT pose at inference. The neighborhood
+is defined geometrically by the current pose and camera, not by known pose error.
+See the [geometry and preprocessing contract](docs/data.md) before using it.
+
+## Results at a glance
+
+![Accuracy and pooled AUROC for three FluoroQA variants, with Raw and Local calibration, on Test and one held-out specimen.](assets/results.svg)
+
+This chart uses already-reviewed aggregate results, not synthetic demo scores.
+At 256 pixels, FluoroQA-BCE achieved **89.04% Local accuracy on Test** and
+**89.76% on one held-out specimen**. Local AUROC is similar across the three
+variants; the chart does not imply uniform improvements or superiority to
+traditional metrics, which are not plotted here.
+
+Important context:
+
+- Success is mTRE <2 mm; failure is ≥2 mm. Each image has 20 candidates,
+  with 60% acceptable and 40% failed. This is not clinical prevalence.
+- Raw thresholds use train; Local thresholds use val. Their difference is not
+  a clean causal estimate of the effect of centering alone.
+- zero/mTRE use best-validation-ranking checkpoints through epoch 200;
+  BCE uses last epoch 350. These three bars are not a matched BCE-only ablation.
+- Test shares specimens with training and has been explored repeatedly.
+  The excluded cohort contains only one specimen. No patient-level uncertainty
+  interval or prospective clinical generalization is established by this chart.
+
+[Exact public aggregates](assets/results.json) ·
+[Figure provenance and limits](docs/visualizations.md).
+Regenerate the chart with `python scripts/build_results_figure.py`.
 
 ## Install and offline test
 
@@ -133,7 +180,7 @@ AUROC is distinct from within-background ranking. Do not mix those evaluations.
 
 ## Scope, privacy and attribution
 
-The release includes no patient examples, numerical benchmark claims, model
+The release includes audited aggregate illustrations, but no patient examples, model
 weights, private renderer code, server scripts, credentials or original Git
 history. See [third-party notices](THIRD_PARTY_NOTICES.md),
 [privacy checklist](docs/privacy.md) and [release review](docs/release_review.md).

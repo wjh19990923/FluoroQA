@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">Local calibration around the current pose, not GT</title><desc id="desc">Generate twelve neighbors by translating plus or minus two millimeters and rotating plus or minus two degrees on each camera axis. Subtract the mean neighbor score from the current score. Raw thresholds fit on train, Local thresholds on validation.</desc>
+<rect width="1200" height="440" rx="20" fill="#f5f8fb"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#193347">
+<text x="40" y="53" font-size="29" font-weight="700">Local calibration: ask how this pose compares with its neighbors</text>
+<text x="40" y="87" font-size="20" fill="#526a79">The center is the current candidate pose — never a hidden ground-truth pose.</text>
+<circle cx="194" cy="234" r="98" fill="#e5f0f6" stroke="#adc8d9" stroke-dasharray="6 6"/>
+<g fill="#9dc7c4"><circle cx="194" cy="136" r="10"/><circle cx="243" cy="149" r="10"/><circle cx="279" cy="185" r="10"/><circle cx="292" cy="234" r="10"/><circle cx="279" cy="283" r="10"/><circle cx="243" cy="319" r="10"/><circle cx="194" cy="332" r="10"/><circle cx="145" cy="319" r="10"/><circle cx="109" cy="283" r="10"/><circle cx="96" cy="234" r="10"/><circle cx="109" cy="185" r="10"/><circle cx="145" cy="149" r="10"/></g>
+<circle cx="194" cy="234" r="38" fill="#107f84"/><text x="194" y="241" text-anchor="middle" fill="white" font-size="22" font-weight="700">T</text>
+<text x="194" y="373" text-anchor="middle" font-size="18">12 neighboring poses</text>
+<rect x="350" y="130" width="390" height="209" rx="14" fill="white" stroke="#cbd9e2"/>
+<text x="376" y="169" font-size="20" font-weight="700">Same camera, same preprocessing</text>
+<text x="376" y="210" font-size="19">Translations: ±2 mm on x, y, z</text>
+<text x="376" y="245" font-size="19">Rotations: ±2° on x, y, z</text>
+<text x="376" y="285" font-size="17" fill="#526a79">Rotate about the CT center transformed</text><text x="376" y="310" font-size="17" fill="#526a79">by the current pose.</text>
+<rect x="780" y="130" width="380" height="209" rx="14" fill="#dff2ef" stroke="#9acac4"/>
+<text x="970" y="175" text-anchor="middle" font-size="22" font-weight="700">Relative local score</text>
+<text x="970" y="226" text-anchor="middle" font-size="23" fill="#107f84">s(T) = d(T) − mean[d(Tⱼ)]</text>
+<text x="970" y="274" text-anchor="middle" font-size="18">Lower than nearby alternatives?</text>
+<text x="970" y="305" text-anchor="middle" font-size="18">Compare with the locked threshold.</text>
+<text x="40" y="414" font-size="17" fill="#526a79">Raw: train-fitted threshold • Local: val-fitted threshold • geometry shown schematically, not a pose-space embedding</text>
+</g></svg>

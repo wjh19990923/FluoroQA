@@ -4,6 +4,11 @@ FluoroQA first-party code is under the MIT license in `LICENSE`.
 No third-party source tree, pretrained weights or dataset is vendored here.
 Python dependencies are installed separately and retain their own licenses.
 
+The companion Projection Lab is an external link, not part of this source
+distribution. Its medical examples have separately displayed CC BY-NC 4.0 terms.
+The diagrams here are original schematics; the result chart contains aggregates
+only. No website medical image or third-party illustration is copied here.
+
 | Dependency | Use | Upstream license source |
 |---|---|---|
 | LPIPS 0.1.4 | VGG feature distance and learned channel layers | [BSD-2-Clause](https://github.com/richzhang/PerceptualSimilarity/blob/master/LICENSE) |

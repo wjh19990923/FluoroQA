@@ -1,0 +1,23 @@
+{
+  "description": "Audited retrospective classification aggregates, 256 pixels, success mTRE < 2 mm. No per-case data.",
+  "review_date": "2026-10-21",
+  "raw_threshold_fit": "train maximum balanced accuracy, largest threshold on ties",
+  "local_threshold_fit": "validation maximum balanced accuracy, largest threshold on ties",
+  "local_mode": "current pose minus mean of 12 neighbor scores",
+  "test": {"backgrounds": 52, "candidates": 1040, "subjects_seen_in_training": true},
+  "heldout": {"backgrounds": 104, "candidates": 2080, "subjects": 1},
+  "rows": [
+    {"model":"FluoroQA-zero", "checkpoint":"best ranking through epoch 200", "cohort":"Test", "mode":"Raw", "accuracy":0.7182692307692308, "auroc":0.7442176713510849},
+    {"model":"FluoroQA-zero", "checkpoint":"best ranking through epoch 200", "cohort":"Test", "mode":"Local", "accuracy":0.8759615384615385, "auroc":0.9398075382149902},
+    {"model":"FluoroQA-mTRE", "checkpoint":"best ranking through epoch 200", "cohort":"Test", "mode":"Raw", "accuracy":0.7384615384615385, "auroc":0.7523306521203156},
+    {"model":"FluoroQA-mTRE", "checkpoint":"best ranking through epoch 200", "cohort":"Test", "mode":"Local", "accuracy":0.8884615384615384, "auroc":0.9433824889053254},
+    {"model":"FluoroQA-BCE", "checkpoint":"last epoch 350", "cohort":"Test", "mode":"Raw", "accuracy":0.8528846153846154, "auroc":0.8802699704142012},
+    {"model":"FluoroQA-BCE", "checkpoint":"last epoch 350", "cohort":"Test", "mode":"Local", "accuracy":0.8903846153846153, "auroc":0.9454704450197239},
+    {"model":"FluoroQA-zero", "checkpoint":"best ranking through epoch 200", "cohort":"Held-out", "mode":"Raw", "accuracy":0.7745192307692308, "auroc":0.8343147112302761},
+    {"model":"FluoroQA-zero", "checkpoint":"best ranking through epoch 200", "cohort":"Held-out", "mode":"Local", "accuracy":0.89375, "auroc":0.9528620793269231},
+    {"model":"FluoroQA-mTRE", "checkpoint":"best ranking through epoch 200", "cohort":"Held-out", "mode":"Raw", "accuracy":0.801923076923077, "auroc":0.8462145201553254},
+    {"model":"FluoroQA-mTRE", "checkpoint":"best ranking through epoch 200", "cohort":"Held-out", "mode":"Local", "accuracy":0.89375, "auroc":0.9539320605276134},
+    {"model":"FluoroQA-BCE", "checkpoint":"last epoch 350", "cohort":"Held-out", "mode":"Raw", "accuracy":0.8658653846153846, "auroc":0.9193594366370809},
+    {"model":"FluoroQA-BCE", "checkpoint":"last epoch 350", "cohort":"Held-out", "mode":"Local", "accuracy":0.8975961538461539, "auroc":0.953661435219428}
+  ]
+}
