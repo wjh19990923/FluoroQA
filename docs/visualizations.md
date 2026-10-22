@@ -34,6 +34,16 @@ Checked 2026-10-22: example loading, current projection and pose controls are
 present. The page states that it does not perform automatic registration and
 uses cropped/flipped/downsampled examples with adjusted camera calibration.
 It is not presented here as a deployed FluoroQA model. User-data import was not
-tested or used in this documentation check. Medical examples stay on the
-companion website and retain its displayed CC BY-NC 4.0 license and source
-attribution; they are not relicensed by this repository's MIT license.
+tested or used in this documentation check. The site's examples retain the
+displayed CC BY-NC 4.0 license and attribution. The authorized subset below
+is not relicensed by this repository's MIT license.
+
+## Authorized real example addition
+
+One already-public acquisition (subject02/view000) is now included with explicit
+authorization. See [the image-specific notice](../assets/deepfluoro/README.md).
+The corresponding saved 256-pixel inputs were scored on CPU with the unchanged
+BCE epoch350 checkpoint. The distance contribution maps are computed from real
+feature differences and learned weights, not painted or AI-generated. Existing
+success/failure labels and two historical scores were verified. No training,
+new rendering, pose optimization or threshold fitting was performed.

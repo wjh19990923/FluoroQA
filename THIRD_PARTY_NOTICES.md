@@ -1,13 +1,15 @@
 # Third-party provenance and license boundary
 
 FluoroQA first-party code is under the MIT license in `LICENSE`.
-No third-party source tree, pretrained weights or dataset is vendored here.
+No third-party source tree, pretrained weights or complete dataset is vendored here.
 Python dependencies are installed separately and retain their own licenses.
 
 The companion Projection Lab is an external link, not part of this source
 distribution. Its medical examples have separately displayed CC BY-NC 4.0 terms.
-The diagrams here are original schematics; the result chart contains aggregates
-only. No website medical image or third-party illustration is copied here.
+The diagrams are original schematics; the result chart contains aggregates.
+The explicit exception is `assets/deepfluoro/`: one public X-ray and derived
+DRR/overlay/contribution panels, licensed **CC BY-NC 4.0, not MIT**. Preserve
+the attribution and changes described in [the image notice](assets/deepfluoro/README.md).
 
 | Dependency | Use | Upstream license source |
 |---|---|---|

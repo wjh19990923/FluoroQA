@@ -1,10 +1,14 @@
 # Privacy and publication boundary
 
-Only newly curated source, public configuration values, documentation and
-synthetic tests are intended for this repository. There are no medical images,
-CT volumes, patient identifiers, poses, camera matrices, private split manifests,
+Only curated source, public configuration values, documentation, aggregate
+figures and synthetic tests are normally intended for this repository.
+An explicitly authorized exception is `assets/deepfluoro/`: two PNGs showing
+one already-public DeepFluoro acquisition and derived visualization panels.
+These have separate attribution and CC BY-NC 4.0 terms. No other medical images,
+CT volumes, private patient identifiers, poses, camera matrices, private split manifests,
 checkpoints, experiment logs, host addresses, tokens or original repository
-history in this release.
+history are included in this release. Public subject/view IDs identify the source,
+not a license to publish additional records.
 
 Generated outputs may contain sensitive data even if filenames do not. Keep all
 `runs/`, `data/`, `weights/`, TensorBoard events, images and renderer outputs

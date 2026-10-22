@@ -5,7 +5,17 @@
 [**Try the interactive 2D–3D Projection Lab →**](https://jinhaolab.com/tools/2d3dreg/)
  · [How it works](#method) · [Results at a glance](#results-at-a-glance) · [Install](#install-and-offline-test)
 
-![FluoroQA overview: compare fluoroscopy and a current-pose DRR, learn a perceptual score, and flag misalignment.](assets/overview.svg)
+![Real DeepFluoro X-ray, candidate DRRs, success/failure overlays and learned distance contribution maps.](assets/deepfluoro/registration-and-heatmaps.png)
+
+**Real example, not a schematic.** The same public DeepFluoro view is shown at
+two candidate poses: **0.93 mm mTRE (success)** and **7.85 mm (failure)**.
+FluoroQA-BCE accepts the first and flags the second using its previously locked
+train threshold. Cyan is X-ray; red is DRR. Heatmaps show actual learned distance
+contributions on a shared scale, not anatomical error labels or Grad-CAM.
+These are existing perturbed poses, not before/after automatic optimization.
+This selected illustration is not a new performance benchmark.
+Image source: Grupp et al. (2020), DeepFluoro, **CC BY-NC 4.0**, separate from MIT code.
+[Source, changes and verification](assets/deepfluoro/README.md).
 
 FluoroQA compares a fluoroscopic image with a rendered image at a candidate pose.
 It adapts the VGG-based [LPIPS metric](https://github.com/richzhang/PerceptualSimilarity)
@@ -16,7 +26,8 @@ architecture and does not claim to replace LPIPS attribution.
 **Initial research-code release.** This repository contains the metric, losses,
 preprocessing helpers, current-pose neighborhood geometry, threshold evaluation,
 a provider-based training entry point, three recipes and offline synthetic tests.
-It does **not** include medical data, trained FluoroQA weights, a DRR renderer,
+Apart from the explicitly licensed public example figures, it does **not** include
+medical datasets, trained FluoroQA weights, a DRR renderer,
 the private data adapter, or a turnkey reproduction of the paper's experiments.
 No clinical use or diagnostic performance is certified.
 
@@ -31,13 +42,21 @@ reset the pose to compare again. The site also exposes camera and display contro
 This is a **manual projection/registration playground**, not an online FluoroQA
 classifier or an automatic registration service. Its display preprocessing is
 not the benchmark preprocessing contract. The site documents example data and
-its CC BY-NC 4.0 terms separately. We link to it rather than copying its medical
-images into this MIT-licensed code repository. No dataset upload is needed to
-try the supplied examples.
+its CC BY-NC 4.0 terms separately. The public example below and the derived
+panels above retain those terms; they are not MIT-licensed images.
+No dataset upload is needed to try the supplied examples.
+
+<img src="assets/deepfluoro/public-xray.png" alt="Real public DeepFluoro subject02 view000 X-ray as displayed by the companion website" width="420">
+
+The website's public X-ray uses a negative-log display window. The model panels
+use the historical 256-pixel benchmark preprocessing, not the website's display
+pixels. They depict the same acquisition; contrast differs deliberately.
 
 ## Method
 
-The overview above separates the input pair, feature comparison and final
+![FluoroQA method overview](assets/overview.svg)
+
+The overview separates the input pair, feature comparison and final
 decision. Its shapes are schematic, not patient images or a measured alignment.
 
 Larger distance means greater dissimilarity. The training objective is
@@ -180,7 +199,8 @@ AUROC is distinct from within-background ranking. Do not mix those evaluations.
 
 ## Scope, privacy and attribution
 
-The release includes audited aggregate illustrations, but no patient examples, model
+The release includes audited aggregate illustrations and one explicitly licensed
+public DeepFluoro view with derived panels. It contains no CT volumes, model
 weights, private renderer code, server scripts, credentials or original Git
 history. See [third-party notices](THIRD_PARTY_NOTICES.md),
 [privacy checklist](docs/privacy.md) and [release review](docs/release_review.md).
