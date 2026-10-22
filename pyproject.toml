@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluoroqa"
+version = "0.1.0"
+description = "Learned perceptual metrics for fluoroscopic 2D/3D registration quality assessment"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Jinhao Wang"}]
+dependencies = ["torch>=2.5,<3", "torchvision>=0.20,<1", "lpips==0.1.4", "numpy>=1.26,<3", "scipy>=1.12,<2", "tensorboard>=2.16,<3"]
+
+[project.scripts]
+fluoroqa-train = "fluoroqa.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,7 @@
+# Release-check environment. Select the appropriate PyTorch CPU/CUDA wheels.
+torch==2.5.1
+torchvision==0.20.1
+lpips==0.1.4
+numpy==2.0.1
+scipy==1.17.1
+tensorboard==2.20.0

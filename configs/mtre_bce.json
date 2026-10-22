@@ -1,0 +1,18 @@
+{
+  "resolution": 256,
+  "seed": 923,
+  "batch_size": 4,
+  "backbone": "tail4",
+  "start_epoch": 200,
+  "end_epoch": 350,
+  "head_lr": 0.0001,
+  "tail_lr": 0.00001,
+  "margin": "mtre",
+  "alpha": 0.001,
+  "cap_mm": 10.0,
+  "bce": {
+    "offset": 0.5137985950001539,
+    "scale": 0.025949672867387943,
+    "weight": 0.0033157194101252657
+  }
+}

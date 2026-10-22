@@ -1,0 +1,14 @@
+{
+  "resolution": 32,
+  "seed": 923,
+  "batch_size": 2,
+  "backbone": "frozen",
+  "start_epoch": 0,
+  "end_epoch": 1,
+  "head_lr": 0.0001,
+  "tail_lr": 0.00001,
+  "margin": "mtre",
+  "alpha": 0.001,
+  "cap_mm": 10.0,
+  "bce": null
+}
