@@ -54,8 +54,9 @@ data and one excluded specimen do not establish general clinical validity.
 
 This is a portable research core, not an archival clone of the internal runs.
 The release intentionally excludes external renderer source and medical data.
-It does not ship the historical split manifest, trained checkpoints, original
-multi-best selection runner or bootstrap analysis. Therefore its synthetic tests
+Trained checkpoints, the split list, the evaluation candidate poses and the
+evaluation scripts will be released upon acceptance of the paper. The original
+multi-best selection runner and bootstrap analysis are not included. Therefore its synthetic tests
 do not reproduce or validate clinical performance numbers. Users must implement
 and audit a compatible provider before attempting a numerical reproduction.
 

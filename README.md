@@ -135,9 +135,9 @@ for training and threshold fitting, not for scoring at deployment.
 | Training entry point and the three configs used in the paper | ✅ |
 | Unit tests and offline smoke run | ✅ |
 | Aggregate results (Table 2B, 256²) | ✅ `assets/results.json` |
-| Trained weights (zero, mTRE, BCE) | Planned for the next release |
-| DeepFluoro data provider, split list and evaluation candidate poses | Planned for the next release |
-| Script that regenerates Tables 2–3 and the probability calibration | Planned for the next release |
+| Trained weights (zero, mTRE, BCE) | To be released upon acceptance |
+| DeepFluoro data provider, split list and evaluation candidate poses | To be released upon acceptance |
+| Script that regenerates Tables 2–3 and the probability calibration | To be released upon acceptance |
 
 DeepFluoro is public ([DOI 10.7281/T1/IFSXNV](https://doi.org/10.7281/T1/IFSXNV));
 this repository does not redistribute it. The paper's DRRs use exponential ray
