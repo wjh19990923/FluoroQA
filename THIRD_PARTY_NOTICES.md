@@ -29,7 +29,7 @@ DeepFluoro or other medical datasets. Pretrained weights and data require a
 separate terms review. No FluoroQA weights are redistributed in this release.
 External DRR/registration libraries are not included because their source and
 redistribution scope have not been cleared for this release. Supply your own
-authorized renderer through the documented provider interface.
+renderer through the documented provider interface.
 
 If redistributing an installed environment, wheel bundle or container, retain
 all dependency licenses and bundled third-party notices, not only this summary.

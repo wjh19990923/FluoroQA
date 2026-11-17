@@ -9,6 +9,10 @@
   newly unfrozen parameters start with empty Adam state. Head LR 1e-4, tail
   LR 1e-5, betas (0.9,0.999), epsilon 1e-8, no decay or scheduler.
 
+Checkpoints used for the reported results: Zero and mTRE use the best
+validation-ranking checkpoint within epochs 1–200. mTRE+BCE uses the epoch-350
+model, fixed before evaluation; its starting point is the mTRE epoch-200 model.
+
 VGG runs in eval mode throughout; LPIPS head dropout (0.5) is active during
 training and disabled during evaluation. Each sample is one fixed/GT/negative
 triplet. A larger batch is not a within-frame multi-negative ranking objective.
@@ -44,7 +48,7 @@ epsilon is introduced. Neighbors never use a GT-centered candidate mean.
 
 AUROC does not depend on the selected decision threshold. Validation used for
 model selection is not an independent test cohort. Repeated exploration of test
-data and one held-out patient do not establish general clinical validity.
+data and one excluded specimen do not establish general clinical validity.
 
 ## Reproduction status
 

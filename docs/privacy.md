@@ -2,7 +2,7 @@
 
 Only curated source, public configuration values, documentation, aggregate
 figures and synthetic tests are normally intended for this repository.
-An explicitly authorized exception is `assets/deepfluoro/`: two PNGs showing
+The only exception is `assets/deepfluoro/`: two PNGs showing
 one already-public DeepFluoro acquisition and derived visualization panels.
 These have separate attribution and CC BY-NC 4.0 terms. No other medical images,
 CT volumes, private patient identifiers, poses, camera matrices, private split manifests,
