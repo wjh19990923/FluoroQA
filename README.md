@@ -8,9 +8,13 @@
 Research code for our ISBI 2027 submission
 *FluoroQA: Learned Perceptual Metrics for Fluoroscopic 2D/3D Registration Quality Assessment*.
 
+> **Code release.** This repository contains the model, losses, Local calibration,
+> threshold fitting, evaluation metrics and training entry point. The trained
+> weights, the DeepFluoro data pipeline and the evaluation scripts will be
+> released upon acceptance.
+
 [Interactive 2D–3D Projection Lab](https://jinhaolab.com/tools/2d3dreg/) ·
-[Method](#method) · [Results](#results) · [Install](#install-and-test) ·
-[Reproducing the paper](#reproducing-the-paper)
+[Method](#method) · [Results](#results) · [Install](#install-and-test)
 
 ![Real DeepFluoro X-ray, candidate DRRs, success/failure overlays and learned distance contribution maps.](assets/deepfluoro/registration-and-heatmaps.png)
 
@@ -127,17 +131,7 @@ For Local calibration, render the 12 neighbours with `fluoroqa.geometry.current_
 and score with `fluoroqa.calibration.local_score`. Ground-truth labels are needed
 for training and threshold fitting, not for scoring at deployment.
 
-## Reproducing the paper
-
-| Component | In this repository |
-|---|---|
-| Model, losses, Local calibration, threshold fitting and evaluation metrics | ✅ |
-| Training entry point and the three configs used in the paper | ✅ |
-| Unit tests and offline smoke run | ✅ |
-| Aggregate results (Table 2B, 256²) | ✅ `assets/results.json` |
-| Trained weights (zero, mTRE, BCE) | To be released upon acceptance |
-| DeepFluoro data provider, split list and evaluation candidate poses | To be released upon acceptance |
-| Script that regenerates Tables 2–3 and the probability calibration | To be released upon acceptance |
+## Data
 
 DeepFluoro is public ([DOI 10.7281/T1/IFSXNV](https://doi.org/10.7281/T1/IFSXNV));
 this repository does not redistribute it. The paper's DRRs use exponential ray

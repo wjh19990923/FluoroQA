@@ -1,4 +1,4 @@
-# Protocol and reproduction boundaries
+# Protocol
 
 ## Three variants
 
@@ -50,15 +50,12 @@ AUROC does not depend on the selected decision threshold. Validation used for
 model selection is not an independent test cohort. Repeated exploration of test
 data and one excluded specimen do not establish general clinical validity.
 
-## Reproduction status
+## Release status
 
-This is a portable research core, not an archival clone of the internal runs.
-The release intentionally excludes external renderer source and medical data.
-Trained checkpoints, the split list, the evaluation candidate poses and the
-evaluation scripts will be released upon acceptance of the paper. The original
-multi-best selection runner and bootstrap analysis are not included. Therefore its synthetic tests
-do not reproduce or validate clinical performance numbers. Users must implement
-and audit a compatible provider before attempting a numerical reproduction.
+This release excludes external renderer source and medical data. Trained
+checkpoints, the split list, the evaluation candidate poses and the evaluation
+scripts will be released upon acceptance of the paper. The synthetic tests check
+the code paths only; they do not validate clinical performance.
 
 The core supports 64,128,256 image sizes. Changing the resolution in zero/mTRE
 configs is supported, but a model/threshold trained at one resolution must not
